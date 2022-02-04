@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Authors List
+{% endblock %}
+
+{% block content %}
+    {% if object_list %}
+            {% for author in object_list %}
+                <p style="font-size: larger;">{{author.name}}  -  {{author.email}}</p>
+                posts:<br>
+                {% for post in author.post_set.all %}
+                    <a href="{% url 'blog:post_detail' slug=post.slug %}" style="font-size: larger;">{{post.title}}</a><br>
+                {% endfor %}
+                ----------------------------------------------------------<br>
+            {% endfor %}
+        {% else %}
+            <p>no author yet!</p>
+        {% endif %}
+{% endblock %}
