@@ -11,9 +11,7 @@
                 {{post.title}}<br>
             </h2>
             <p>
-                {{ post.content|truncatechars:300 }}<a href="{% url 'blog:post_detail' post.slug %}" ><input type="submit" value="ادامه مطلب" ></a><br>
-                <!-- {{post.shortened_content}}<a href="{% url 'blog:post_detail' post.slug %}" ><input type="submit" value="ادامه مطلب" ></a><br>
-                ---------------------------------------------------------------------------------<br> -->
+                {{ post.content|truncatechars:300 }}<a href="{% url 'blog:post_detail' post.slug %}" ><input type="submit" value="continue reading" ></a><br>
             </p>
         {% endfor %}<br>
     {% else %}

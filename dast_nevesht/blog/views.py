@@ -30,5 +30,3 @@ class PostCreateView(CreateView):
     form_class = PostForm
     template_name = 'post_create.html'
     success_url = reverse_lazy('blog:post_list')
-    # def get_success_url(self):
-    #     return reverse('post_list.html')

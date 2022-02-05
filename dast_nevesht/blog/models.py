@@ -15,7 +15,7 @@ class Post(models.Model):
     title = models.CharField(max_length=300)
     content = models.TextField()
     image = models.ImageField(upload_to='images/%Y/%m/%d', blank=True)
-    slug = models.SlugField(max_length=300,default=None, unique=True, blank=True)
+    slug = models.SlugField(max_length=30,default=None, unique=True, blank=True)
     author = models.ForeignKey(Author, on_delete=models.DO_NOTHING)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -27,9 +27,6 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
-
-    # def shortened_content(self):
-    #     return self.content[:300] + '...'
 
 
 class Comment(models.Model):
