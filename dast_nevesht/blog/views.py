@@ -8,6 +8,7 @@ from django.urls import reverse_lazy, reverse
 class PostListView(ListView):
     template_name = 'home.html'
     queryset = Post.objects.order_by('-updated_at')[:10]
+    paginate_by = 1
 
 
 class PostDetailView(DetailView):
